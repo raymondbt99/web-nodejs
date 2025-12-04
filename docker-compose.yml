@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=YOUR_SUPABASE_URL
+      - SUPABASE_KEY=YOUR_SUPABASE_KEY
+    restart: unless-stopped
