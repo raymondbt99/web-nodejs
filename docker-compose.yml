@@ -5,7 +5,9 @@ services:
     build: .
     ports:
       - "3000:3000"
+    env_file:
+      - .env.local  # Load semua dari .env.local
     environment:
-      - DATABASE_URL=YOUR_SUPABASE_URL
-      - SUPABASE_KEY=YOUR_SUPABASE_KEY
+      - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
     restart: unless-stopped
